@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 }
 `; 
 
-export default function NavBar() {
+export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   const toggleNav = () => {
