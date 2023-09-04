@@ -16,7 +16,7 @@ const TaskList: React.FC<TaskListProps>  = ({ tasks, deleteTask, toggleComplete 
     <div className="flex items-center justify-between mx-4">
   <ul className="mt-4">
     {tasks.map((task, index) => (
-      <li key={index} className="flex items-center justify-between py-3 px-4 border my-2 rounded-md border-gray-700">
+      <li key={index} className="flex items-center justify-between py-3 px-4 border-b my-2 rounded-md border-gray-700">
         <div className="flex items-center">
           <input
             type="checkbox"
