@@ -1,0 +1,60 @@
+/* eslint-disable @next/next/no-page-custom-font */
+"use client";
+import Image from 'next/image'
+import NavBar from './components/navbar'
+import styled, { createGlobalStyle } from "styled-components";
+import Footer from './components/footer';
+import TaskForm from 'src/app/components/taskForm.tsx';
+import TaskList from 'src/app/components/TaskList';
+import { useEffect, useState } from 'react';
+const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: 'Ambit';
+  src: url('/fonts/Ambit/Ambit-Regular.ttf') format('truetype');
+}
+`;
+export default function Home() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    // Load tasks from local storage on component mount
+    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    setTasks(storedTasks);
+  }, []);
+
+  useEffect(() => {
+    // Save tasks to local storage whenever tasks state changes
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
+  const addTask = (taskName: any) => {
+    const newTask = { name: taskName, completed: false };
+    setTasks([...tasks, newTask]);
+  };
+
+  const toggleComplete = (index: string | number) => {
+    const updatedTasks = [...tasks];
+    updatedTasks[index].completed = !updatedTasks[index].completed;
+    setTasks(updatedTasks);
+  };
+
+  const deleteTask = (index: number) => {
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTasks(updatedTasks);
+  };
+
+  return (
+    <div style={{ fontFamily: 'Ambit, sans-serif'}} >
+    <div className="bg-black font-Ambit">
+    <GlobalStyle />  
+    <NavBar />
+    </div>
+    <div className='flex flex-col items-center h-screen justify-center'>
+      <h1 className='text-4xl md:text-6xl '>Task Tracker</h1>
+      <TaskForm addTask={addTask} />
+      <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} />
+      </div>
+    <Footer />
+    </div>
+  );
+}
