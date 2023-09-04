@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
 "use client";
 import Image from 'next/image';
-import NavBar from './components/Navbar';
+import Navbar from './components/Navbar';
 import styled, { createGlobalStyle } from "styled-components";
 import Footer from './components/Footer';
 import TaskForm from './components/Form';
@@ -57,7 +57,7 @@ export default function Home() {
     <div style={{ fontFamily: 'Ambit, sans-serif'}} >
     <div className="font-Ambit bg-white dark:bg-black ">
     <GlobalStyle />  
-    <NavBar />
+    <Navbar />
     <Intro />
     <TaskForm addTask={addTask}/>
     <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} editTask={editTask} />
