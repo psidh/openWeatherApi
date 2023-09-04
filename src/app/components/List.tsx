@@ -68,25 +68,25 @@ const TaskList: React.FC<TaskListProps>  = ({ tasks, deleteTask, toggleComplete,
               )}
             </div>
           </div>
-          <div className="space-x-2 mt-2 sm:mt-0 flex flex-col sm:flex-row">
+          <div className="space-x-2 mt-2 sm:mt-0 flex flex-row sm:flex-row">
             {editMode === index ? (
               <button
                 onClick={() => handleSaveClick(index)}
-                className="text-lg bg-green-600 hover:bg-green-700 text-white px-2 py-2 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
+                className="text-sm bg-green-600 hover:bg-green-700 text-white px-2 py-1 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
               >
                 Save
               </button>
             ) : (
               <button
                 onClick={() => handleEditClick(index, task.name)}
-                className="text-lg bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
+                className="text-sm bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
               >
                 Edit
               </button>
             )}
             <button
               onClick={() => deleteTask(index)}
-              className="text-lg bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
+              className="text-sm bg-red-600 hover:bg-red-700 text-white px-2 py-1 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
             >
               Delete
             </button>

@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily: 'Ambit, sans-serif'}} >
-    <div className="font-Ambit bg-white dark:bg-black h-screen">
+    <div className="font-Ambit bg-white dark:bg-black">
     <GlobalStyle />  
     <Navbar />
     <Intro />
