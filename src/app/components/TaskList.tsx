@@ -39,18 +39,18 @@ const TaskList: React.FC<TaskListProps>  = ({ tasks, deleteTask, toggleComplete,
             type="checkbox"
             checked={task.completed}
             onChange={() => toggleComplete(index)}
-            className="h-6 w-6 text-blue-500 border border-gray-200 rounded-full"
+            className={`h-6 w-6 text-white border border-gray-200 rounded ${task.completed ? 'accent-yellow-500 rounded focus:ring-blue-500' : 'accent-gray-500'}`}
           />
           {editMode === index ? (
             <input
               type="text"
               value={editedTaskName}
               onChange={(e) => setEditedTaskName(e.target.value)}
-              className="dark:bg-black rounded-lg border border-gray-300 text-base sm:text-xl dark:text-white"
+              className="dark:bg-black rounded-lg border border-gray-300 sm:text-xl px-2 py-1 dark:text-white"
             />
           ) : (
             <span
-              className={`text-base sm:text-xl divide-y dark:text-white ${
+              className={`text-base sm:text-xl my-2 divide-y dark:text-white ${
                 task.completed ? 'line-through text-gray-400' : 'text-black'
               }`}
             >

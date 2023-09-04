@@ -27,7 +27,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ addTask }) => {
         />
 
       <h1></h1>
-      <button type="submit" className="text-xl md:text-2xl my-8 py-1 px-12  hover:bg-teal-600 bg-teal-500 text-white rounded-md">
+      <button type="submit" className="text-xl md:text-2xl my-8 py-2 px-12  hover:bg-teal-600 bg-teal-500 text-white rounded-md">
         Add
       </button>
       </div>
