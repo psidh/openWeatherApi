@@ -48,12 +48,12 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily: 'Ambit, sans-serif'}} >
-    <div className="bg-black font-Ambit">
+    <div className="font-Ambit">
     <GlobalStyle />  
     <NavBar />
     </div>
     <div className='flex flex-col items-center min-h-screen justify-center'>
-      <h1 className='text-4xl md:text-6xl'>Task Tracker</h1>
+      <h1 className='text-4xl md:text-6xl my-4'>Task Tracker</h1>
       <TaskForm addTask={addTask} />
       <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} />
     </div>

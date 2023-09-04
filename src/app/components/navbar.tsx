@@ -18,7 +18,7 @@ export default function NavBar() {
 
   return (
     <div>
-      <div className="mx-8 lg:mx-20 flex justify-between text-white  py-8 md:py-10">
+      <div className="mx-8 lg:mx-20 flex justify-between py-8 md:py-10">
         
         <a className="hover:scale-105 transition duration-300" href="mailto:philkhanasidharth14@gmail.com">
           <div className="flex gap-4 items-center ">
@@ -40,8 +40,8 @@ export default function NavBar() {
             <span>philkhanasidharth14@gmail.com</span>
           </div>
         </a>
-        <div className="gap-14 hidden lg:flex text-white">
-          <a className="text-[#005AC1]  hover:text-gray-300" href="/">Home</a>
+        <div className="gap-14 hidden lg:flex ">
+          <a className="text-[#005AC1]" href="/">Home</a>
           <a className=" hover:text-green-600" href="https://psidh.vercel.app"> Resume </a>
           <a className=" hover:text-green-600" href="https://psidhQuotes.vercel.app"> Quotes App </a>
           <a className=" hover:text-green-600" href="/#footer">Contact</a>
@@ -66,7 +66,7 @@ export default function NavBar() {
       </div>
 
       {isNavOpen && ( // Render the navigation links if isNavOpen is true
-        <div className="flex flex-col lg:hidden text-white">
+        <div className="flex flex-col lg:hidden ">
           <a className="text-[#005AC1] m-6" href="/">Home</a>
           <a className="m-6   hover:text-green-600" href="https://psidh.vercel.app"> Resume </a>
           <a className="m-6   hover:text-green-600" href="https://psidhQuotes.vercel.app"> Quotes App </a>

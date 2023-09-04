@@ -13,31 +13,36 @@ interface TaskListProps {
 
 const TaskList: React.FC<TaskListProps>  = ({ tasks, deleteTask, toggleComplete }) => {
   return (
-    <ul className="mt-4">
-  {tasks.map((task, index) => (
-    <li key={index} className="flex items-center justify-between py-3 border-b border-gray-300">
-      <div className="flex items-center">
-        <input
-          type="checkbox"
-          checked={task.completed}
-          onChange={() => toggleComplete(index)}
-          className="h-6 w-6 text-blue-500 border border-gray-300 rounded"
-        />
-        <span
-          className={`px-8 text-2xl dark:text-white  ${task.completed ? 'line-through text-gray-400' : 'text-black'}`}
+    <div className="flex items-center justify-between mx-4">
+  <ul className="mt-4">
+    {tasks.map((task, index) => (
+      <li key={index} className="flex items-center justify-between py-3 px-4 border rounded-xl border-gray-300">
+        <div className="flex items-center">
+          <input
+            type="checkbox"
+            checked={task.completed}
+            onChange={() => toggleComplete(index)}
+            className="h-6 w-6 text-blue-500 border border-gray-200 rounded-full"
+          />
+          <span
+            className={`px-2 sm:px-4 text-md sm:text-2xl divide-y dark:text-white ${
+              task.completed ? 'line-through text-gray-400' : 'text-black'
+            }`}
+          >
+            {task.name}
+          </span>
+        </div>
+        <button
+          onClick={() => deleteTask(index)}
+          className=" bg-red-600 hover:bg-red-700 px-2 py-1 rounded-md text-gray-200 hover:text-gray-300 focus:outline-none"
         >
-          {task.name}
-        </span>
-      </div>
-      <button
-        onClick={() => deleteTask(index)}
-        className="mx-4 text-red-500 hover:text-red-600 focus:outline-none"
-      >
-        Delete
-      </button>
-    </li>
-  ))}
-</ul>
+          Delete
+        </button>
+      </li>
+    ))}
+  </ul>
+</div>
+
 
   );
 };
