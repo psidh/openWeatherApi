@@ -1,12 +1,13 @@
 /* eslint-disable @next/next/no-page-custom-font */
 "use client";
 import Image from 'next/image'
-import NavBar from './components/navbar'
+import NavBar from './components/NavBar'
 import styled, { createGlobalStyle } from "styled-components";
-import Footer from './components/footer';
-import TaskForm from './components/taskForm';
-import TaskList from './components/TaskList';
+import Footer from './components/Footer';
+import TaskForm from './components/Form';
+import TaskList from './components/List';
 import { useEffect, useState } from 'react';
+import Intro from './components/Intro';
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Ambit';
@@ -54,16 +55,14 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily: 'Ambit, sans-serif'}} >
-    <div className="font-Ambit">
+    <div className="font-Ambit bg-white dark:bg-black ">
     <GlobalStyle />  
     <NavBar />
-    </div>
-    <div className='flex flex-col items-center min-h-screen justify-center'>
-      <h1 className='text-4xl md:text-6xl my-4'>Task Tracker</h1>
-      <TaskForm addTask={addTask}/>
-      <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} editTask={editTask} />
-    </div>
+    <Intro />
+    <TaskForm addTask={addTask}/>
+    <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} editTask={editTask} />
     <Footer />
+    </div>
     </div>
   );
 }

@@ -42,8 +42,8 @@ export default function NavBar() {
         </a>
         <div className="gap-14 hidden lg:flex ">
           <a className="text-[#005AC1]" href="/">Home</a>
-          <a className=" hover:text-green-600" href="https://psidh.vercel.app"> Resume </a>
-          <a className=" hover:text-green-600" href="https://psidhQuotes.vercel.app"> Quotes App </a>
+          <a className=" hover:text-green-600" href="/about">About </a>
+          <a className=" hover:text-green-600" href="https://psidh.vercel.app" target="_blank">Resume</a>
           <a className=" hover:text-green-600" href="/#footer">Contact</a>
         </div>
         <svg
@@ -67,10 +67,10 @@ export default function NavBar() {
 
       {isNavOpen && ( // Render the navigation links if isNavOpen is true
         <div className="flex flex-col lg:hidden ">
-          <a className="text-[#005AC1] m-6" href="/">Home</a>
-          <a className="m-6   hover:text-green-600" href="https://psidh.vercel.app"> Resume </a>
-          <a className="m-6   hover:text-green-600" href="https://psidhQuotes.vercel.app"> Quotes App </a>
-          <a className="m-6   hover:text-green-600" href="/#footer"> Contact </a>
+          <a className="text-[#005AC1]" href="/">Home</a>
+          <a className=" hover:text-green-600" href="/about">About </a>
+          <a className=" hover:text-green-600" href="https://psidh.vercel.app" target="_blank">Resume</a>
+          <a className=" hover:text-green-600" href="/#footer">Contact</a>
         </div>
       )}
       </div>
