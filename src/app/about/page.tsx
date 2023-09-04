@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-page-custom-font */
 "use client";
 import Image from 'next/image'
-import NavBar from '.././components/NavBar'
+import NavBar from "../components/NavBar"
 import styled, { createGlobalStyle } from "styled-components";
-import Footer from '.././components/Footer';
+import Footer from "../components/Footer";
 import { useEffect, useState } from 'react';
 const GlobalStyle = createGlobalStyle`
 @font-face {
