@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Tracker
+
+Task Tracker is a simple web application built with Next.js that allows users to manage their tasks. You can add, edit, and delete tasks with ease, and your tasks are persisted using local storage.
+
+## Features
+
+- Add tasks: Enter a task name and click "Add" to add it to your task list.
+- Complete tasks: Mark tasks as completed by checking the checkbox next to each task.
+- Delete tasks: Remove tasks from your list by clicking the "Delete" button.
+- Local storage: Your tasks are stored in local storage, so they persist even after you close your browser.
 
 ## Getting Started
 
-First, run the development server:
+To get started with Task Tracker, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone the repository: `git clone <repository-url>`
+2. Navigate to the project directory: `cd task-tracker`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+5. Open your browser and visit `http://localhost:3000`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Enter a task in the input field and press "Add" to add it to your list.
+- Click the checkbox next to a task to mark it as completed.
+- Click the "Delete" button to remove a task from the list.
+- Your tasks are saved in local storage and will persist across browser sessions.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contributing
 
-## Learn More
+Contributions are welcome! If you have suggestions, bug reports, or would like to add new features, please open an issue or submit a pull request.
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the [MIT License](LICENSE).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Acknowledgments
 
-## Deploy on Vercel
+- This project was created as a learning exercise for building web applications with Next.js and Tailwind CSS.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you have any questions or need further assistance, feel free to contact the project maintainer:
+
+[P SIDHARTH]
+[philkhanasidharth14@gmail.com]
+[github.com/psidh]
+
