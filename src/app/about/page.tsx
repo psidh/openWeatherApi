@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
-// "use client";
+"use client";
 import Image from 'next/image';
-import NavBar from "../components/NavBar";
 import styled, { createGlobalStyle } from "styled-components";
-import Footer from "../components/Footer";
 import { useEffect, useState } from 'react';
 const GlobalStyle = createGlobalStyle`;
 @font-face {
@@ -13,12 +11,18 @@ const GlobalStyle = createGlobalStyle`;
 `;
 export default function About(){
 
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
 <div style={{ fontFamily: 'Ambit, sans-serif' }} className="bg-white dark:bg-black">
   <div className="font-Ambit">
     <GlobalStyle />
-    <NavBar />
-  </div>
+  
+    </div>
   <div className="container mx-auto px-4 md:px-8 py-8 text-justify ">
     <h1 className="text-4xl md:text-6xl font-bold dark:text-white text-gray-800 mb-4">
       About Task Tracker
@@ -54,7 +58,6 @@ export default function About(){
       Task Tracker is designed to help you manage your tasks efficiently and make your daily life more organized. Try it today and experience the difference!
     </p>
   </div>
-  <Footer />
 </div>
 
   );
