@@ -46,6 +46,12 @@ export default function Home() {
     setTasks(updatedTasks);
   };
 
+  const editTask = (index: number, editedTaskName: string) => {
+    const updatedTasks: { name: string; completed: boolean }[] = [...tasks];
+    updatedTasks[index].name = editedTaskName;
+    setTasks(updatedTasks);
+  };
+
   return (
     <div style={{ fontFamily: 'Ambit, sans-serif'}} >
     <div className="font-Ambit">
@@ -54,8 +60,8 @@ export default function Home() {
     </div>
     <div className='flex flex-col items-center min-h-screen justify-center'>
       <h1 className='text-4xl md:text-6xl my-4'>Task Tracker</h1>
-      <TaskForm addTask={addTask} />
-      <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} />
+      <TaskForm addTask={addTask}/>
+      <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} editTask={editTask} />
     </div>
     <Footer />
     </div>
