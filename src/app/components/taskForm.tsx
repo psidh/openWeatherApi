@@ -17,17 +17,20 @@ const TaskForm: React.FC<TaskFormProps> = ({ addTask }) => {
 
   return (
     <form onSubmit={handleSubmit} className="my-4">
-      <input
+        <div className='flex flex-col justify-center items-center'>
+        <input
         type="text"
         placeholder="Add Task"
         value={task}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTask(e.target.value)} // Use React.ChangeEvent<HTMLInputElement> for the event type
-        className="dark:bg-black py-2 px-4 rounded-l border border-gray-300"
-      />
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTask(e.target.value)}
+        className="dark:bg-black py-3 pl-4 pr-28 rounded-lg border border-gray-300"
+        />
+
       <h1></h1>
-      <button type="submit" className="my-4 py-2 px-6 hover:bg-teal-600 bg-teal-500 text-white rounded-lg">
+      <button type="submit" className="text-xl md:text-2xl my-4 py-1 px-12  hover:bg-teal-600 bg-teal-500 text-white rounded-md">
         Add
       </button>
+      </div>
     </form>
   );
 };

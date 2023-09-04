@@ -52,11 +52,11 @@ export default function Home() {
     <GlobalStyle />  
     <NavBar />
     </div>
-    <div className='flex flex-col items-center h-screen justify-center'>
-      <h1 className='text-4xl md:text-6xl '>Task Tracker</h1>
+    <div className='flex flex-col items-center min-h-screen justify-center'>
+      <h1 className='text-4xl md:text-6xl'>Task Tracker</h1>
       <TaskForm addTask={addTask} />
       <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} />
-      </div>
+    </div>
     <Footer />
     </div>
   );
