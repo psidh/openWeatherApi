@@ -4,10 +4,10 @@ Task Tracker is a simple web application built with Next.js that allows users to
 
 ## Features
 
-- Add tasks: Enter a task name and click "Add" to add it to your task list.
-- Complete tasks: Mark tasks as completed by checking the checkbox next to each task.
-- Delete tasks: Remove tasks from your list by clicking the "Delete" button.
-- Local storage: Your tasks are stored in local storage, so they persist even after you close your browser.
+- **Add tasks:** Enter a task name and click "Add" to add it to your task list.
+- **Complete tasks:** Mark tasks as completed by checking the checkbox next to each task.
+- **Delete tasks:** Remove tasks from your list by clicking the "Delete" button.
+- **Local storage:** Your tasks are stored in local storage, so they persist even after you close your browser.
 
 ## Getting Started
 
@@ -42,7 +42,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 If you have any questions or need further assistance, feel free to contact the project maintainer:
 
-[P SIDHARTH]
-[philkhanasidharth14@gmail.com]
-[github.com/psidh]
-
+- **P SIDHARTH**
+- Email: [philkhanasidharth14@gmail.com](mailto:philkhanasidharth14@gmail.com)
+- GitHub: [github.com/psidh](https://github.com/psidh)
