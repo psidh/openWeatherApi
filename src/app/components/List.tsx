@@ -30,55 +30,78 @@ const TaskList: React.FC<TaskListProps>  = ({ tasks, deleteTask, toggleComplete,
 
 
   return ( 
-    <div className="mx-4">
-  <ul className="my-4">
+<div className="mx-4">
+  <ul className="my-4 space-y-4">
     {tasks.map((task, index) => (
-      <li key={index} className="flex flex-col sm:flex-row sm:items-center justify-between py-3 px-4 border-b my-4 rounded-md border-gray-700 space-y-4 sm:space-y-0 sm:space-x-6">
-        <div className="flex items-center space-x-2">
-          <input
-            type="checkbox"
-            checked={task.completed}
-            onChange={() => toggleComplete(index)}
-            className={`h-6 w-6 text-white border border-gray-200 rounded ${task.completed ? 'accent-yellow-500 rounded focus:ring-blue-500' : 'accent-gray-500'}`}
-          />
-          {editMode === index ? (
+      <li
+        key={index}
+        className="bg-white p-4 border shadow-md rounded-lg hover:shadow-lg mx-auto max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl"
+      >
+        <div className="flex flex-col sm:flex-row items-center justify-between">
+          <div className="flex items-center space-x-2">
             <input
-              type="text"
-              value={editedTaskName}
-              onChange={(e) => setEditedTaskName(e.target.value)}
-              className="dark:bg-black rounded-lg border border-gray-300 sm:text-xl px-2 py-1 dark:text-white"
-            />
-          ) : (
-            <span
-              className={`text-base sm:text-xl my-2 divide-y dark:text-white ${
-                task.completed ? 'line-through text-gray-400' : 'text-black'
+              type="checkbox"
+              checked={task.completed}
+              onChange={() => toggleComplete(index)}
+              className={`h-6 w-6 text-white border border-gray-200 rounded-full focus:ring-2 focus:ring-blue-400 ${
+                task.completed
+                  ? 'bg-yellow-500 border-yellow-500'
+                  : 'bg-gray-200 border-gray-200'
               }`}
+            />
+            <div className="flex flex-col">
+              {editMode === index ? (
+                <input
+                  type="text"
+                  value={editedTaskName}
+                  onChange={(e) => setEditedTaskName(e.target.value)}
+                  className="dark:bg-black rounded-lg border border-gray-300 text-base p-1 dark:text-white focus:ring focus:ring-blue-500"
+                />
+              ) : (
+                <span
+                  className={`text-base ${
+                    task.completed ? 'line-through text-gray-400' : 'text-black'
+                  }`}
+                >
+                  {task.name}
+                </span>
+              )}
+            </div>
+          </div>
+          <div className="space-x-2 mt-2 sm:mt-0 flex flex-col sm:flex-row">
+            {editMode === index ? (
+              <button
+                onClick={() => handleSaveClick(index)}
+                className="text-lg bg-green-600 hover:bg-green-700 text-white px-2 py-2 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
+              >
+                Save
+              </button>
+            ) : (
+              <button
+                onClick={() => handleEditClick(index, task.name)}
+                className="text-lg bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
+              >
+                Edit
+              </button>
+            )}
+            <button
+              onClick={() => deleteTask(index)}
+              className="text-lg bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
             >
-              {task.name}
-            </span>
-          )}
-        </div>
-        <div className="flex items-center space-x-4 my-2 sm:mt-0">
-          {editMode === index ? (
-            <button onClick={() => handleSaveClick(index)} className="bg-green-600 hover:bg-green-700 px-2 py-1 rounded-md text-gray-200 hover:text-gray-300 focus:outline-none text-base sm:text-lg">
-              Save
+              Delete
             </button>
-          ) : (
-            <button onClick={() => handleEditClick(index, task.name)} className="bg-blue-600 hover:bg-blue-700 px-2 py-1 rounded-md text-gray-200 hover:text-gray-300 focus:outline-none text-base sm:text-lg">
-              Edit
-            </button>
-          )}
-          <button
-            onClick={() => deleteTask(index)}
-            className="bg-red-600 hover:bg-red-700 px-2 py-1 rounded-md text-gray-200 hover:text-gray-300 focus:outline-none text-base sm:text-lg"
-          >
-            Delete
-          </button>
+          </div>
         </div>
       </li>
     ))}
   </ul>
 </div>
+
+
+
+
+
+
 
 
   

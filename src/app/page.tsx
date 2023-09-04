@@ -55,12 +55,14 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily: 'Ambit, sans-serif'}} >
-    <div className="font-Ambit bg-white dark:bg-black ">
+    <div className="font-Ambit bg-white dark:bg-black h-screen">
     <GlobalStyle />  
     <Navbar />
     <Intro />
     <TaskForm addTask={addTask}/>
     <TaskList tasks={tasks} deleteTask={deleteTask} toggleComplete={toggleComplete} editTask={editTask} />
+    </div>
+    <div className='bg-white dark:bg-black'>
     <Footer />
     </div>
     </div>
