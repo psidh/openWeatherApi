@@ -1,7 +1,17 @@
 // components/TaskList.js
 import React from 'react';
+// Define a type or interface for the props
+interface TaskListProps {
+  tasks: {
+    name: string;
+    completed: boolean;
+  }[]; // This assumes your tasks array has an array of objects with 'name' and 'completed' properties
+  deleteTask: (index: number) => void;
+  toggleComplete: (index: number) => void;
+}
 
-const TaskList = ({ tasks, deleteTask, toggleComplete }) => {
+
+const TaskList: React.FC<TaskListProps>  = ({ tasks, deleteTask, toggleComplete }) => {
   return (
     <ul className="mt-4">
   {tasks.map((task, index) => (

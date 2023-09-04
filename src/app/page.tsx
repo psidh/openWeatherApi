@@ -4,8 +4,8 @@ import Image from 'next/image'
 import NavBar from './components/navbar'
 import styled, { createGlobalStyle } from "styled-components";
 import Footer from './components/footer';
-import TaskForm from 'src/app/components/taskForm.tsx';
-import TaskList from 'src/app/components/TaskList';
+import TaskForm from './components/taskForm';
+import TaskList from './components/TaskList';
 import { useEffect, useState } from 'react';
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -14,11 +14,12 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 export default function Home() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<{ name: string; completed: boolean }[]>([]);
+
 
   useEffect(() => {
     // Load tasks from local storage on component mount
-    const storedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const storedTasks = JSON.parse(localStorage.getItem('tasks') || 'null') || [];
     setTasks(storedTasks);
   }, []);
 
@@ -27,16 +28,18 @@ export default function Home() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
 
-  const addTask = (taskName: any) => {
-    const newTask = { name: taskName, completed: false };
+  const addTask = (taskName: string) => {
+    const newTask: { name: string; completed: boolean } = { name: taskName, completed: false };
     setTasks([...tasks, newTask]);
   };
+  
 
-  const toggleComplete = (index: string | number) => {
-    const updatedTasks = [...tasks];
+  const toggleComplete = (index: number) => {
+    const updatedTasks: { name: string; completed: boolean }[] = [...tasks];
     updatedTasks[index].completed = !updatedTasks[index].completed;
     setTasks(updatedTasks);
   };
+  
 
   const deleteTask = (index: number) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
