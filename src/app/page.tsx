@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
 "use client";
-import Image from 'next/image'
-import NavBar from './components/NavBar'
+import Image from 'next/image';
+import NavBar from './components/NavBar';
 import styled, { createGlobalStyle } from "styled-components";
 import Footer from './components/Footer';
 import TaskForm from './components/Form';

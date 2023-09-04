@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-page-custom-font */
-"use client";
-import Image from 'next/image'
-import NavBar from "../components/NavBar"
+// "use client";
+import Image from 'next/image';
+import NavBar from "../components/NavBar";
 import styled, { createGlobalStyle } from "styled-components";
 import Footer from "../components/Footer";
 import { useEffect, useState } from 'react';
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`;
 @font-face {
   font-family: 'Ambit';
   src: url('/fonts/Ambit/Ambit-Regular.ttf') format('truetype');
