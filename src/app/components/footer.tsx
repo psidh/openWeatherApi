@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 "use client";
 import React, {useEffect }from 'react';
 import styled, { createGlobalStyle } from "styled-components";

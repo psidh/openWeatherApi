@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-page-custom-font */
 "use client";
 import Image from 'next/image';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar';
 import styled, { createGlobalStyle } from "styled-components";
-import Footer from './components/Footer';
-import TaskForm from './components/Form';
-import TaskList from './components/List';
+import Footer from './components/footer';
+import TaskForm from './components/form';
+import TaskList from './components/list';
 import { useEffect, useState } from 'react';
-import Intro from './components/Intro';
+import Intro from './components/intro';
 const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: 'Ambit';
