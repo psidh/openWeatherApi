@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Define a type for the weather data
 interface WeatherData {
@@ -58,22 +58,22 @@ const Weather = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 min-h-screen flex flex-col items-center justify-center">
+    <div className="bg-gradient-to-r text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 h-screen flex flex-col items-center justify-center">
   <div className="m-12 text-white p-4 md:p-6 w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
     <h2 className="text-3xl md:text-6xl dark:text-black text-center font-semibold my-4">Weather App</h2>
-    <div className="flex flex-col md:flex-row justify-center items-center space-x-2 my-4">
+    <div className="flex flex-col md:flex-row justify-between items-center space-x-2 my-4">
       <input
-        className="text-black border p-2 rounded-md w-full md:w-48 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="text-black border px-4 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
         type="text"
         placeholder="Enter city name"
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
       <button
-        className="bg-blue-600 hover:bg-blue-900 text-white px-8 py-4 md:px-4 md:py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 my-4"
+        className="bg-blue-600 hover:bg-blue-900 text-white px-4 py-2 md:px-4 md:py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 my-4"
         onClick={fetchWeatherData}
       >
-        Get Weather
+        Get
       </button>
     </div>
     {error && <p className="text-red-500 text-bold mb-4">{error}</p>}
@@ -94,7 +94,7 @@ const Weather = () => {
         <div className='flex flex-col justify-between items-start md:text-xl text-md'>
           <p>Visibility - {weatherData.visibility} m</p>
           <p >Pressure - {weatherData.main?.pressure} Pa</p>
-          <p>TimeZone (GMT) - ({weatherData.timezone}/60)</p>
+          <p>TimeZone (GMT) - ({(weatherData.timezone / 60)})</p>
           <p >Humidity - {weatherData.main?.humidity} %</p>
           <p >Wind - {weatherData.wind?.deg}°</p>
           <p >Speed - {weatherData.wind?.speed} Km/hr</p>
