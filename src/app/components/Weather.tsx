@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState, useEffect } from 'react';
 
@@ -23,7 +24,6 @@ interface WeatherData {
         speed: number,
     };
     weather: [{
-      description: string,
       icon: string,
       main: string,
     }];
@@ -62,8 +62,6 @@ const Weather = () => {
       .catch((error) => setError('City not found'));
   };
 
-//   const icons = ["☁️"  "☀️" , 🌤️, 🌥️, 🌧️, 🌨️, ⛈️, ⛈️, 🌩️, ⚡️, ❄️]
-
   return (
     <div className="bg-gradient-to-r text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 h-screen flex flex-col items-center justify-center">
   <div className="bg-white md:m-12 md:mt-4 md:mb-4 md:rounded-lg  dark:text-black p-4 md:p-6 w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
@@ -83,7 +81,7 @@ const Weather = () => {
         Get
       </button>
     </div>
-    {error && <p className="text-red-500 text-bold mb-4">{error}</p>}
+    {error && <p className="text-red-500 font-bold mb-4">{error}</p>}
     {weatherData && (
       <div>
         
@@ -91,7 +89,7 @@ const Weather = () => {
         <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0]?.icon}@2x.png`} alt="Weather Icon" />
          {weatherData.name}, {weatherData.sys.country} <span className='text-2xl items-end text-gray-600 mx-2'> {weatherData.weather[0]?.main}</span>
         </h3>
-        <div className="flex flex-row justify-between items-center my-4 rounded-md border-2">
+        <div className="flex flex-row justify-between items-center px-2 my-8 rounded-md border border-gray-300">
           <p className="text-3xl md:text-4xl font-bold mx-2">
             {weatherData.main?.temp}°C
           </p>
@@ -100,16 +98,47 @@ const Weather = () => {
           <p>Max. temp {weatherData.main?.temp_max}°C</p>
           </div>      
         </div>
-        <div className='flex flex-col justify-between items-start md:text-xl text-md'>
-          <p>Visibility: {weatherData.visibility / 1000} km</p>
-          <p>Pressure: {weatherData.main?.pressure} Pa</p>
-          <p>TimeZone (GMT): {Math.round(weatherData.timezone/3600) - 1   + ":" + (((weatherData.timezone) % 3600)/3600)*60}</p>
-          <p>Humidity:  {weatherData.main?.humidity} %</p>
-          <p>💨 Wind:  {weatherData.wind?.deg}°</p>
-          <p>Wind Speed: {weatherData.wind?.speed} km/hr</p>
-          <p>Latitude:  {weatherData.coord?.lat}°</p>
-          <p>Longitude:  {weatherData.coord?.lon}°</p>
-        </div> 
+        <div className="flex flex-col md:text-xl text-md">
+        <div className="flex justify-between">
+          <p className="font-bold text-blue-500">Visibility:</p>
+          <p>{weatherData.visibility / 1000} km</p>
+        </div>
+        <div className="flex justify-between">
+          <p className="font-bold text-blue-500">Pressure:</p>
+          <p>{weatherData.main?.pressure} Pa</p>
+        </div>
+        <div className="flex justify-between">
+          <p className="font-bold text-blue-500">TimeZone (GMT):</p>
+          <p>
+            {Math.floor(weatherData.timezone / 3600)}:
+            {(weatherData.timezone % 3600) / 60 < 10
+              ? '0'
+              : ''}
+            {(weatherData.timezone % 3600) / 60}
+          </p>
+        </div>
+        <div className="flex justify-between">
+          <p className="font-bold text-blue-500">Humidity:</p>
+          <p>{weatherData.main?.humidity} %</p>
+        </div>
+        <div className="flex justify-between">
+          <p className="font-bold text-blue-500">💨 Wind:</p>
+          <p>{weatherData.wind?.deg}°</p>
+        </div>
+        <div className="flex justify-between">
+          <p className="font-bold text-blue-500">Wind Speed:</p>
+          <p>{weatherData.wind?.speed} km/hr</p>
+        </div>
+        <div className="flex justify-between">
+          <p className="font-bold text-blue-500">Latitude:</p>
+          <p>{weatherData.coord?.lat}°</p>
+        </div>
+        <div className="flex justify-between">
+          <p className="font-bold text-blue-500">Longitude:</p>
+          <p>{weatherData.coord?.lon}°</p>
+        </div>
+      </div>
+
       </div>
     )}
   </div>
