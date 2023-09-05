@@ -41,10 +41,10 @@ export default function Navbar() {
           </div>
         </a>
         <div className="gap-14 hidden lg:flex ">
-          <a className="text-blue-200" href="/">Home</a>
-          <a className="text-blue-200 hover:text-blue-700" href="/about">About </a>
-          <a className="text-blue-200 hover:text-blue-700" href="https://psidh.vercel.app" target="_blank">Resume</a>
-          <a className="text-blue-200 hover:text-blue-700" href="/#footer">Contact</a>
+          <a className="text-blue-600" href="/">Home</a>
+          <a className="text-blue-600 hover:text-blue-700" href="/about">About </a>
+          <a className="text-blue-600 hover:text-blue-700" href="https://psidh.vercel.app" target="_blank">Resume</a>
+          <a className="text-blue-600 hover:text-blue-700" href="/#footer">Contact</a>
         </div>
         <svg
         onClick={toggleNav} // Add onClick event to toggle navigation
@@ -67,10 +67,10 @@ export default function Navbar() {
 
       {isNavOpen && ( // Render the navigation links if isNavOpen is true
         <div className="flex flex-col lg:hidden ">
-          <a className="text-[#b4d7ff] m-6" href="/">Home</a>
-          <a className="text-blue-200 hover:text-blue-700 m-6" href="/about">About </a>
-          <a className="text-blue-200 hover:text-blue-700 m-6" href="https://psidh.vercel.app" target="_blank">Resume</a>
-          <a className="text-blue-200 hover:text-blue-700 m-6" href="/#footer">Contact</a>
+          <a className="text-blue-600 m-6" href="/">Home</a>
+          <a className="text-blue-600 hover:text-blue-700 m-6" href="/about">About </a>
+          <a className="text-blue-600 hover:text-blue-700 m-6" href="https://psidh.vercel.app" target="_blank">Resume</a>
+          <a className="text-blue-600 hover:text-blue-700 m-6" href="/#footer">Contact</a>
         </div>
       )}
       </div>

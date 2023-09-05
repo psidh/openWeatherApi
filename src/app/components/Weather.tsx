@@ -65,7 +65,7 @@ const Weather = () => {
 
   return (
     <div className="bg-gradient-to-r text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 h-screen flex flex-col items-center justify-center">
-  <div className="m-12 text-white p-4 md:p-6 w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
+  <div className="bg-white md:m-12 md:mt-4 md:mb-4 md:rounded-lg  dark:text-black p-4 md:p-6 w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
     <h2 className="text-3xl md:text-6xl dark:text-black text-center font-semibold my-4">Weather App</h2>
     <div className="flex flex-col md:flex-row justify-between items-center space-x-2 my-4">
       <input
