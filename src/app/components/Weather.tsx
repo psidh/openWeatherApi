@@ -94,10 +94,10 @@ const Weather = () => {
         <div className='flex flex-col justify-between items-start md:text-xl text-md'>
           <p>Visibility - {weatherData.visibility} m</p>
           <p >Pressure - {weatherData.main?.pressure} Pa</p>
-          <p>TimeZone (GMT) - ({(weatherData.timezone / 60)})</p>
+          <p>TimeZone (GMT): {Math.round(weatherData.timezone/3600) - 1   + "" + (((weatherData.timezone) % 3600)/3600)*60}</p>
           <p >Humidity - {weatherData.main?.humidity} %</p>
           <p >Wind - {weatherData.wind?.deg}°</p>
-          <p >Speed - {weatherData.wind?.speed} Km/hr</p>
+          <p >Speed - {weatherData.wind?.speed} miles/hr</p>
         </div> 
       </div>
     )}
