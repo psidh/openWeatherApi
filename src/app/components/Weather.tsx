@@ -54,12 +54,12 @@ const Weather = () => {
     )
       .then((response) => {
         if (!response.ok) {
-          throw new Error('City not found');
+          throw new Error('City not found ! 🥲 , try the latest name');
         }
         return response.json();
       })
       .then((data) => setWeatherData(data))
-      .catch((error) => setError('City not found'));
+      .catch((error) => setError('City not found ! 🥲 , try the latest name'));
   };
 
   return (
@@ -81,7 +81,7 @@ const Weather = () => {
         Get
       </button>
     </div>
-    {error && <p className="text-red-500 font-bold mb-4">{error}</p>}
+    {error && <p className="text-center text-red-500 font-bold mb-4">{error}</p>}
     {weatherData && (
       <div>
         
@@ -100,17 +100,17 @@ const Weather = () => {
         </div>
         <div className="flex flex-col md:text-xl text-md">
         <div className="flex justify-between">
-          <p className="font-bold text-blue-500">Visibility:</p>
+          <p className="font-bold text-blue-800">Visibility</p>
           <p>{weatherData.visibility / 1000} km</p>
         </div>
         <div className="flex justify-between">
-          <p className="font-bold text-blue-500">Pressure:</p>
+          <p className="font-bold text-blue-800">Pressure</p>
           <p>{weatherData.main?.pressure} Pa</p>
         </div>
         <div className="flex justify-between">
-          <p className="font-bold text-blue-500">TimeZone (GMT):</p>
+          <p className="font-bold text-blue-800">TimeZone (GMT)</p>
           <p>
-            {Math.floor(weatherData.timezone / 3600)}:
+            {Math.floor(weatherData.timezone / 3600)}
             {(weatherData.timezone % 3600) / 60 < 10
               ? '0'
               : ''}
@@ -118,23 +118,23 @@ const Weather = () => {
           </p>
         </div>
         <div className="flex justify-between">
-          <p className="font-bold text-blue-500">Humidity:</p>
+          <p className="font-bold text-blue-800">Humidity</p>
           <p>{weatherData.main?.humidity} %</p>
         </div>
         <div className="flex justify-between">
-          <p className="font-bold text-blue-500">💨 Wind:</p>
+          <p className="font-bold text-blue-800">Wind</p>
           <p>{weatherData.wind?.deg}°</p>
         </div>
         <div className="flex justify-between">
-          <p className="font-bold text-blue-500">Wind Speed:</p>
+          <p className="font-bold text-blue-800">Wind Speed</p>
           <p>{weatherData.wind?.speed} km/hr</p>
         </div>
         <div className="flex justify-between">
-          <p className="font-bold text-blue-500">Latitude:</p>
+          <p className="font-bold text-blue-800">Latitude</p>
           <p>{weatherData.coord?.lat}°</p>
         </div>
         <div className="flex justify-between">
-          <p className="font-bold text-blue-500">Longitude:</p>
+          <p className="font-bold text-blue-800">Longitude</p>
           <p>{weatherData.coord?.lon}°</p>
         </div>
       </div>
