@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import styled, { createGlobalStyle } from "styled-components";
 import { useEffect, useState } from 'react';
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 const GlobalStyle = createGlobalStyle`;
 @font-face {
   font-family: 'Ambit';
@@ -21,7 +23,7 @@ export default function About(){
 <div style={{ fontFamily: 'Ambit, sans-serif' }} className="bg-white dark:bg-black">
   <div className="font-Ambit">
     <GlobalStyle />
-  
+  <Navbar />
     </div>
   <div className="container mx-auto px-4 md:px-8 py-8 text-justify ">
     <h1 className="text-4xl md:text-6xl font-bold dark:text-white text-gray-800 mb-4">
@@ -58,7 +60,9 @@ export default function About(){
       Task Tracker is designed to help you manage your tasks efficiently and make your daily life more organized. Try it today and experience the difference!
     </p>
   </div>
+  <Footer />
 </div>
+
 
   );
 }

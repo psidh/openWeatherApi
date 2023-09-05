@@ -43,7 +43,7 @@ const TaskList: React.FC<TaskListProps>  = ({ tasks, deleteTask, toggleComplete,
               type="checkbox"
               checked={task.completed}
               onChange={() => toggleComplete(index)}
-              className={`h-6 w-6  border border-gray-200 rounded-full focus:ring-2 focus:ring-blue-400 ${
+              className={`h-6 w-6 mt-4 border border-gray-200 rounded-full focus:ring-2 focus:ring-green-400 ${
                 task.completed
                   ? 'bg-yellow-500 border-yellow-500'
                   : 'bg-gray-200 border-gray-200'
@@ -59,7 +59,7 @@ const TaskList: React.FC<TaskListProps>  = ({ tasks, deleteTask, toggleComplete,
                 />
               ) : (
                 <span
-                  className={`text-base dark:text-white text-black ${
+                  className={`text-base mt-4 dark:text-white text-black ${
                     task.completed ? 'line-through text-gray-400' : 'text-black'
                   }`}
                 >
@@ -72,21 +72,21 @@ const TaskList: React.FC<TaskListProps>  = ({ tasks, deleteTask, toggleComplete,
             {editMode === index ? (
               <button
                 onClick={() => handleSaveClick(index)}
-                className="text-sm bg-green-600 hover:bg-green-700  text-white px-2 py-1 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
+                className="text-sm bg-green-600 hover:bg-green-700  text-white px-2 py-1 rounded-md hover:text-gray-300 focus:outline-none mt-4 mb-2 sm:mb-0"
               >
                 Save
               </button>
             ) : (
               <button
                 onClick={() => handleEditClick(index, task.name)}
-                className="text-sm bg-blue-600 hover:bg-blue-700  text-white px-2 py-1 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
+                className="text-sm bg-blue-600 hover:bg-blue-700  text-white px-2 py-1 rounded-md hover:text-gray-300 focus:outline-none mt-4 mb-2 sm:mb-0"
               >
                 Edit
               </button>
             )}
             <button
               onClick={() => deleteTask(index)}
-              className="text-sm bg-red-600 hover:bg-red-700  text-white px-2 py-1 rounded-md hover:text-gray-300 focus:outline-none mb-2 sm:mb-0"
+              className="text-sm bg-red-600 hover:bg-red-700  text-white px-2 py-1 rounded-md hover:text-gray-300 focus:outline-none mt-4 mb-2 sm:mb-0"
             >
               Delete
             </button>
