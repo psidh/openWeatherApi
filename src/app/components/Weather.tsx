@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 
 // Define a type for the weather data
 interface WeatherData {
+    coord: {
+        lon: number;
+        lat: number;
+    }
     name: string;
     sys: {
       country: string;
@@ -18,10 +22,10 @@ interface WeatherData {
         deg: number,
         speed: number,
     };
-    weather: {
+    weather: [{
       description: string;
       icon: string;
-    };
+    }];
     timezone: number;
     visibility: number;
   }
@@ -57,6 +61,8 @@ const Weather = () => {
       .catch((error) => setError('City not found'));
   };
 
+//   const icons = ["☁️"  "☀️" , 🌤️, 🌥️, 🌧️, 🌨️, ⛈️, ⛈️, 🌩️, ⚡️, ❄️]
+
   return (
     <div className="bg-gradient-to-r text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 h-screen flex flex-col items-center justify-center">
   <div className="m-12 text-white p-4 md:p-6 w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
@@ -79,8 +85,9 @@ const Weather = () => {
     {error && <p className="text-red-500 text-bold mb-4">{error}</p>}
     {weatherData && (
       <div>
-        <h3 className="flex justify-center items-start text-2xl md:text-3xl font-semibold mb-2">
-          {weatherData.name}, {weatherData.sys.country}
+        
+        <h3 className="flex flex-row justify-center items-center text-2xl md:text-3xl font-semibold mb-2">
+        <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0]?.icon}@2x.png`} alt="Weather Icon" /> {weatherData.name}, {weatherData.sys.country}
         </h3>
         <div className="flex flex-row justify-between items-center my-4 rounded-md border-2">
           <p className="text-3xl md:text-4xl font-bold mx-2">
@@ -92,12 +99,14 @@ const Weather = () => {
           </div>      
         </div>
         <div className='flex flex-col justify-between items-start md:text-xl text-md'>
-          <p>Visibility - {weatherData.visibility} m</p>
-          <p >Pressure - {weatherData.main?.pressure} Pa</p>
-          <p>TimeZone (GMT): {Math.round(weatherData.timezone/3600) - 1   + "" + (((weatherData.timezone) % 3600)/3600)*60}</p>
-          <p >Humidity - {weatherData.main?.humidity} %</p>
-          <p >Wind - {weatherData.wind?.deg}°</p>
-          <p >Speed - {weatherData.wind?.speed} miles/hr</p>
+          <p>Visibility: {weatherData.visibility / 1000} km</p>
+          <p>Pressure: {weatherData.main?.pressure} Pa</p>
+          <p>TimeZone (GMT): {Math.round(weatherData.timezone/3600) - 1   + ":" + (((weatherData.timezone) % 3600)/3600)*60}</p>
+          <p>Humidity:  {weatherData.main?.humidity} %</p>
+          <p>💨 Wind:  {weatherData.wind?.deg}°</p>
+          <p>Wind Speed: {weatherData.wind?.speed} km/hr</p>
+          <p>Latitude:  {weatherData.coord?.lat}°</p>
+          <p>Longitude:  {weatherData.coord?.lon}°</p>
         </div> 
       </div>
     )}
