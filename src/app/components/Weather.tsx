@@ -9,10 +9,21 @@ interface WeatherData {
     };
     main: {
       temp: number;
+      temp_min: number;
+      temp_max: number;
+      pressure: number;
+      humidity: number;
+    };
+    wind: {
+        deg: number,
+        speed: number,
     };
     weather: {
       description: string;
-    }[];
+      icon: string;
+    };
+    timezone: number;
+    visibility: number;
   }
   
 
@@ -48,8 +59,8 @@ const Weather = () => {
 
   return (
     <div className="bg-gradient-to-r text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 min-h-screen flex flex-col items-center justify-center">
-  <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
-    <h2 className="text-3xl dark:text-black text-center font-semibold my-4">Weather App</h2>
+  <div className="m-12 text-white p-4 md:p-6 w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
+    <h2 className="text-3xl md:text-6xl dark:text-black text-center font-semibold my-4">Weather App</h2>
     <div className="flex flex-col md:flex-row justify-center items-center space-x-2 my-4">
       <input
         className="text-black border p-2 rounded-md w-full md:w-48 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -59,7 +70,7 @@ const Weather = () => {
         onChange={(e) => setCity(e.target.value)}
       />
       <button
-        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 my-4"
+        className="bg-blue-600 hover:bg-blue-900 text-white px-8 py-4 md:px-4 md:py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 my-4"
         onClick={fetchWeatherData}
       >
         Get Weather
@@ -68,15 +79,26 @@ const Weather = () => {
     {error && <p className="text-red-500 text-bold mb-4">{error}</p>}
     {weatherData && (
       <div>
-        <h3 className="flex justify-center items-center text-2xl md:text-3xl font-semibold mb-2">
-          Weather in {weatherData.name}, {weatherData.sys.country}
+        <h3 className="flex justify-center items-start text-2xl md:text-3xl font-semibold mb-2">
+          {weatherData.name}, {weatherData.sys.country}
         </h3>
-        <div className="flex justify-center items-center">
-          <p className="text-xl font-bold mr-4">
+        <div className="flex flex-row justify-between items-center my-4 rounded-md border-2">
+          <p className="text-3xl md:text-4xl font-bold mx-2">
             {weatherData.main?.temp}°C
           </p>
-          <p className="text-lg">{weatherData.weather?.[0]?.description}</p>
+          <div className='flex flex-col justify-between md:text-xl text-md my-2 mx-2'>
+          <p>Min. temp {weatherData.main?.temp_min}°C</p>
+          <p>Max. temp {weatherData.main?.temp_max}°C</p>
+          </div>      
         </div>
+        <div className='flex flex-col justify-between items-start md:text-xl text-md'>
+          <p>Visibility - {weatherData.visibility} m</p>
+          <p >Pressure - {weatherData.main?.pressure} Pa</p>
+          <p>TimeZone (GMT) - ({weatherData.timezone}/60)</p>
+          <p >Humidity - {weatherData.main?.humidity} %</p>
+          <p >Wind - {weatherData.wind?.deg}°</p>
+          <p >Speed - {weatherData.wind?.speed} Km/hr</p>
+        </div> 
       </div>
     )}
   </div>
@@ -87,3 +109,8 @@ const Weather = () => {
 };
 
 export default Weather;
+
+
+
+
+

@@ -21,7 +21,7 @@ export default function Home() {
     <GlobalStyle />  
     <Navbar />
     <Weather />
-    <Footer />
+    {/* <Footer /> */}
     </div> 
     </div>
   );
