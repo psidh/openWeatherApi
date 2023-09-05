@@ -23,8 +23,9 @@ interface WeatherData {
         speed: number,
     };
     weather: [{
-      description: string;
-      icon: string;
+      description: string,
+      icon: string,
+      main: string,
     }];
     timezone: number;
     visibility: number;
@@ -87,7 +88,8 @@ const Weather = () => {
       <div>
         
         <h3 className="flex flex-row justify-center items-center text-2xl md:text-3xl font-semibold mb-2">
-        <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0]?.icon}@2x.png`} alt="Weather Icon" /> {weatherData.name}, {weatherData.sys.country}
+        <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0]?.icon}@2x.png`} alt="Weather Icon" />
+         {weatherData.name}, {weatherData.sys.country} <span className='text-2xl items-end text-gray-600 mx-2'> {weatherData.weather[0]?.main}</span>
         </h3>
         <div className="flex flex-row justify-between items-center my-4 rounded-md border-2">
           <p className="text-3xl md:text-4xl font-bold mx-2">
