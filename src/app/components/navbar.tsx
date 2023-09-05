@@ -42,9 +42,9 @@ export default function Navbar() {
         </a>
         <div className="gap-14 hidden lg:flex ">
           <a className="text-blue-600" href="/">Home</a>
-          <a className="text-blue-600text-blue-600 hover:text-blue-700" href="/about">About </a>
-          <a className="text-blue-600text-blue-600 hover:text-blue-700" href="https://psidh.vercel.app" target="_blank">Resume</a>
-          <a className="text-blue-600text-blue-600 hover:text-blue-700" href="/#footer">Contact</a>
+          <a className="text-blue-600 hover:text-blue-700" href="/about">About </a>
+          <a className="text-blue-600 hover:text-blue-700" href="https://psidh.vercel.app" target="_blank">Resume</a>
+          <a className="text-blue-600 hover:text-blue-700" href="/#footer">Contact</a>
         </div>
         <svg
         onClick={toggleNav} // Add onClick event to toggle navigation
