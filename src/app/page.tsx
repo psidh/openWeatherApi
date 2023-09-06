@@ -4,7 +4,6 @@ import Image from 'next/image';
 import styled, { createGlobalStyle } from "styled-components";
 import { useEffect, useState } from 'react';
 import Navbar from './components/navbar';
-import Footer from './components/footer';
 import Weather from './components/Weather';
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -21,7 +20,6 @@ export default function Home() {
     <GlobalStyle />  
     <Navbar />
     <Weather />
-    {/* <Footer /> */}
     </div> 
     </div>
   );

@@ -63,7 +63,7 @@ const Weather = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 h-screen flex flex-col items-center justify-center">
+    <div className="bg-gradient-to-r pt-16 text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 h-screen flex flex-col items-center justify-center">
   <div className="bg-white md:m-12 md:mt-4 md:mb-4 md:rounded-lg  dark:text-black p-4 md:p-6 w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
     <h2 className="text-3xl md:text-6xl text-gray-800 text-center font-semibold my-4">Weather App</h2>
     <div className="flex flex-col md:flex-row justify-between items-center space-x-2 my-4">
@@ -85,9 +85,9 @@ const Weather = () => {
     {weatherData && (
       <div>
         
-        <h3 className="flex flex-row justify-center items-center text-2xl md:text-3xl font-semibold mb-2">
+        <h3 className="flex flex-col justify-center items-center text-2xl md:text-3xl font-semibold mb-2">
         <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0]?.icon}@2x.png`} alt="Weather Icon" />
-         {weatherData.name}, {weatherData.sys.country} <span className='text-2xl items-end text-gray-600 mx-2'> {weatherData.weather[0]?.main}</span>
+         {weatherData.name}, {weatherData.sys.country} <span className='text-xl text-gray-600 mx-2'> {weatherData.weather[0]?.main}</span>
         </h3>
         <div className="flex flex-row justify-between items-center px-2 my-8 rounded-md border border-gray-300">
           <p className="text-3xl md:text-4xl font-bold mx-2">

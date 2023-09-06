@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <div className="mx-8 lg:mx-20 flex justify-between py-8 md:py-10">
+      <div className="text-white mx-8 lg:mx-20 flex justify-between py-8 md:py-10">
         
         <a className="hover:scale-105 transition duration-300" href="mailto:philkhanasidharth14@gmail.com">
           <div className="flex gap-4 items-center ">
@@ -40,11 +40,11 @@ export default function Navbar() {
             
           </div>
         </a>
-        <div className="gap-14 hidden lg:flex ">
-          <a className="text-blue-600" href="/">Home</a>
-          <a className="text-blue-600 hover:text-blue-700" href="/about">About </a>
-          <a className="text-blue-600 hover:text-blue-700" href="https://psidh.vercel.app" target="_blank">Resume</a>
-          <a className="text-blue-600 hover:text-blue-700" href="/#footer">Contact</a>
+        <div className="gap-14 hidden lg:flex text-white">
+          <a className="" href="/">Home</a>
+          <a className=" hover:text-blue-700" href="/about">About </a>
+          <a className=" hover:text-blue-700" href="https://psidh.vercel.app" target="_blank">Resume</a>
+          <a className=" hover:text-blue-700" href="/#footer">Contact</a>
         </div>
         <svg
         onClick={toggleNav} // Add onClick event to toggle navigation
@@ -66,11 +66,11 @@ export default function Navbar() {
       </div>
 
       {isNavOpen && ( // Render the navigation links if isNavOpen is true
-        <div className="flex flex-col lg:hidden ">
-          <a className="text-blue-600 m-6" href="/">Home</a>
-          <a className="text-blue-600 hover:text-blue-700 m-6" href="/about">About </a>
-          <a className="text-blue-600 hover:text-blue-700 m-6" href="https://psidh.vercel.app" target="_blank">Resume</a>
-          <a className="text-blue-600 hover:text-blue-700 m-6" href="/#footer">Contact</a>
+        <div className="flex flex-col lg:hidden text-white">
+          <a className="m-6" href="/">Home</a>
+          <a className="hover:text-blue-200 m-6" href="/about">About </a>
+          <a className="hover:text-blue-200 m-6" href="https://psidh.vercel.app" target="_blank">Resume</a>
+          <a className="hover:text-blue-200 m-6" href="/#footer">Contact</a>
         </div>
       )}
       </div>
