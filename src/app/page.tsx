@@ -20,10 +20,12 @@ export default function Home() {
     bg-gradient-to-r text-white dark:text-white 
     from-blue-500 via-blue-400 to-blue-300 
     bg-white dark:bg-black
-    h-screen">
+    ">
     <GlobalStyle />  
     <Navbar />
+    <div className='h-screen'>
     <Weather />
+</div>
     </div> 
     </div>
   );

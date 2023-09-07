@@ -63,82 +63,84 @@ const Weather = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r pt-16 text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 max-h-screen flex flex-col items-center justify-center ">
-  <div className="bg-white md:m-12 mt-4 mb-4 md:rounded-lg dark:text-black p-4 md:p-6 w-full md:w-2/3 lg:w-3/4 xl:w-2/3 ">
-    <h2 className="text-3xl md:text-6xl text-gray-800 text-center font-semibold my-4">Weather App</h2>
-    <div className="flex flex-col md:flex-row justify-between items-center space-x-2 my-4">
+    <div className="bg-gradient-to-r pt-4 md:pt-16 text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 flex flex-col items-center justify-center ">
+  <div className="bg-white md:m-4 mt-2 md:mt-4 mb-2 md:mb-4 md:rounded-lg dark:text-black p-2 md:p-4 w-full md:w-11/12 lg:w-10/12 xl:w-2/3 ">
+    <h2 className="text-xl md:text-3xl text-gray-800 text-center font-semibold my-2 md:my-4">Weather App</h2>
+    <div className="flex flex-col md:flex-row justify-center md:justify-between items-center space-x-2 my-2 md:my-4">
       <input
-        className="text-black border px-4 py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="text-black border px-2 md:px-4 py-2 md:py-3 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
         type="text"
         placeholder="Enter city name"
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
       <button
-        className="bg-blue-600 hover:bg-blue-900 text-white px-4 py-2 md:px-4 md:py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 my-4"
+        className="bg-blue-600 hover:bg-blue-900 text-white px-2 md:px-4 py-2 md:py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 my-2 md:my-4"
         onClick={fetchWeatherData}
       >
         Get
       </button>
     </div>
-    {error && <p className="text-center text-red-500 font-bold mb-4">{error}</p>}
+    {error && <p className="text-center text-red-500 font-bold mb-2 md:mb-4">{error}</p>}
     {weatherData && (
       <div>
-        
-        <h3 className="flex flex-col justify-center items-center text-2xl md:text-3xl font-semibold mb-2">
-        <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0]?.icon}@2x.png`} alt="Weather Icon" />
-         {weatherData.name}, {weatherData.sys.country} <span className='text-xl text-gray-600 mx-2'> {weatherData.weather[0]?.main}</span>
+        <h3 className="flex flex-col justify-center items-center text-xl md:text-2xl font-semibold mb-2 md:mb-4">
+          <img
+            src={`https://openweathermap.org/img/wn/${weatherData.weather[0]?.icon}@2x.png`}
+            alt="Weather Icon"
+          />
+          {weatherData.name}, {weatherData.sys.country}{' '}
+          <span className="text-md md:text-lg text-gray-600 mx-2">
+            {weatherData.weather[0]?.main}
+          </span>
         </h3>
-        <div className="flex flex-row justify-between items-center px-2 my-8 rounded-md border border-gray-300">
-          <p className="text-3xl md:text-4xl font-bold mx-2">
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center px-2 my-2 md:my-4 rounded-md border border-gray-300">
+          <p className="text-xl md:text-2xl font-bold mx-2">
             {weatherData.main?.temp}°C
           </p>
-          <div className='flex flex-col justify-between md:text-xl text-md my-2 mx-2 space-y-4'>
-          <p>Min. temp {weatherData.main?.temp_min}°C</p>
-          <p>Max. temp {weatherData.main?.temp_max}°C</p>
-          </div>      
+          <div className="flex flex-col justify-between text-md my-2 md:my-0 mx-2 space-y-2 md:space-y-0 md:space-x-2">
+            <p>Min. temp {weatherData.main?.temp_min}°C</p>
+            <p>Max. temp {weatherData.main?.temp_max}°C</p>
+          </div>
         </div>
-        <div className="flex flex-col md:text-xl text-md">
-        <div className="my-4 flex justify-between">
-          <p className="font-bold text-blue-800">Visibility</p>
-          <p>{weatherData.visibility / 1000} km</p>
+        <div className="flex flex-col text-md md:text-lg my-2 md:my-4">
+          <div className="my-2 md:my-4 flex justify-between">
+            <p className="font-bold text-blue-800">Visibility</p>
+            <p>{(weatherData.visibility / 1000).toFixed(2)} km</p>
+          </div>
+          <div className="my-2 md:my-4 flex justify-between">
+            <p className="font-bold text-blue-800">Pressure</p>
+            <p>{weatherData.main?.pressure} Pa</p>
+          </div>
+          <div className="my-2 md:my-4 flex justify-between">
+            <p className="font-bold text-blue-800">TimeZone (GMT)</p>
+            <p>
+              {Math.floor(weatherData.timezone / 3600)}
+              {(weatherData.timezone % 3600) / 60 < 10 ? '0' : ''}
+              {(weatherData.timezone % 3600) / 60}
+            </p>
+          </div>
+          <div className="my-2 md:my-4 flex justify-between">
+            <p className="font-bold text-blue-800">Humidity</p>
+            <p>{weatherData.main?.humidity} %</p>
+          </div>
+          <div className="my-2 md:my-4 flex justify-between">
+            <p className="font-bold text-blue-800">Wind</p>
+            <p>{weatherData.wind?.deg}°</p>
+          </div>
+          <div className="my-2 md:my-4 flex justify-between">
+            <p className="font-bold text-blue-800">Wind Speed</p>
+            <p>{weatherData.wind?.speed} km/hr</p>
+          </div>
+          <div className="my-2 md:my-4 flex justify-between">
+            <p className="font-bold text-blue-800">Latitude</p>
+            <p>{weatherData.coord?.lat}°</p>
+          </div>
+          <div className="my-2 md:my-4 flex justify-between">
+            <p className="font-bold text-blue-800">Longitude</p>
+            <p>{weatherData.coord?.lon}°</p>
+          </div>
         </div>
-        <div className="my-4 flex justify-between">
-          <p className="font-bold text-blue-800">Pressure</p>
-          <p>{weatherData.main?.pressure} Pa</p>
-        </div>
-        <div className="my-4 flex justify-between">
-          <p className="font-bold text-blue-800">TimeZone (GMT)</p>
-          <p>
-            {Math.floor(weatherData.timezone / 3600)}
-            {(weatherData.timezone % 3600) / 60 < 10
-              ? '0'
-              : ''}
-            {(weatherData.timezone % 3600) / 60}
-          </p>
-        </div>
-        <div className="my-4 flex justify-between">
-          <p className="font-bold text-blue-800">Humidity</p>
-          <p>{weatherData.main?.humidity} %</p>
-        </div>
-        <div className="my-4 flex justify-between">
-          <p className="font-bold text-blue-800">Wind</p>
-          <p>{weatherData.wind?.deg}°</p>
-        </div>
-        <div className="my-4 flex justify-between">
-          <p className="font-bold text-blue-800">Wind Speed</p>
-          <p>{weatherData.wind?.speed} km/hr</p>
-        </div>
-        <div className="my-4 flex justify-between">
-          <p className="font-bold text-blue-800">Latitude</p>
-          <p>{weatherData.coord?.lat}°</p>
-        </div>
-        <div className="my-4 flex justify-between">
-          <p className="font-bold text-blue-800">Longitude</p>
-          <p>{weatherData.coord?.lon}°</p>
-        </div>
-      </div>
-
       </div>
     )}
   </div>

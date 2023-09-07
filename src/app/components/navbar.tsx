@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="gap-14 hidden lg:flex text-white">
           <a className="" href="/">Home</a>
           <a className=" hover:text-blue-700" href="/about">About </a>
-          <a className=" hover:text-blue-200 m-6" href="https://psidh.vercel.app" target="_blank">Visit My Page</a>
+          <a className=" hover:text-blue-700" href="https://psidh.vercel.app" target='_blank'>Visit My Page</a>
           
         </div>
         <svg
@@ -69,7 +69,7 @@ export default function Navbar() {
         <div className="flex flex-col lg:hidden text-white">
           <a className="m-6" href="/">Home</a>
           <a className="hover:text-blue-200 m-6" href="/about">About </a>
-          <a className="hover:text-blue-200 m-6" href="https://psidh.vercel.app" target="_blank">Visit My Page</a>
+          <a className=" hover:text-blue-700" href="https://psidh.vercel.app" target='_blank'>Visit My Page</a>
         </div>
       )}
       </div>
