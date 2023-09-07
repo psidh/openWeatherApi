@@ -95,7 +95,7 @@ const Weather = () => {
           </span>
         </h3>
         <div className="flex flex-col md:flex-row justify-center md:justify-between items-center px-2 my-2 md:my-4 rounded-md border border-gray-300">
-          <p className="text-xl md:text-2xl font-bold mx-2">
+          <p className="text-xl md:text-2xl font-bold my-2 mx-2">
             {weatherData.main?.temp}°C
           </p>
           <div className="flex flex-col justify-between text-md my-2 md:my-0 mx-2 space-y-2 md:space-y-0">
