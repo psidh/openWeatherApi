@@ -104,15 +104,15 @@ const Weather = () => {
           </div>
         </div>
         <div className="flex flex-col text-md md:text-lg my-2 md:my-4">
-          <div className="my-2 md:my-4 flex justify-between">
+          <div className="m-2 md:my-4 flex justify-between">
             <p className="font-bold text-blue-800">Visibility</p>
             <p>{(weatherData.visibility / 1000).toFixed(2)} km</p>
           </div>
-          <div className="my-2 md:my-4 flex justify-between">
+          <div className="m-2 md:my-4 flex justify-between">
             <p className="font-bold text-blue-800">Pressure</p>
             <p>{weatherData.main?.pressure} Pa</p>
           </div>
-          <div className="my-2 md:my-4 flex justify-between">
+          <div className="m-2 md:my-4 flex justify-between">
             <p className="font-bold text-blue-800">TimeZone (GMT)</p>
             <p>
               {Math.floor(weatherData.timezone / 3600)}
@@ -120,23 +120,23 @@ const Weather = () => {
               {(weatherData.timezone % 3600) / 60}
             </p>
           </div>
-          <div className="my-2 md:my-4 flex justify-between">
+          <div className="m-2 md:my-4 flex justify-between">
             <p className="font-bold text-blue-800">Humidity</p>
             <p>{weatherData.main?.humidity} %</p>
           </div>
-          <div className="my-2 md:my-4 flex justify-between">
+          <div className="m-2 md:my-4 flex justify-between">
             <p className="font-bold text-blue-800">Wind</p>
             <p>{weatherData.wind?.deg}°</p>
           </div>
-          <div className="my-2 md:my-4 flex justify-between">
+          <div className="m-2 md:my-4 flex justify-between">
             <p className="font-bold text-blue-800">Wind Speed</p>
             <p>{weatherData.wind?.speed} km/hr</p>
           </div>
-          <div className="my-2 md:my-4 flex justify-between">
+          <div className="m-2 md:my-4 flex justify-between">
             <p className="font-bold text-blue-800">Latitude</p>
             <p>{weatherData.coord?.lat}°</p>
           </div>
-          <div className="my-2 md:my-4 flex justify-between">
+          <div className="m-2 md:my-4 flex justify-between">
             <p className="font-bold text-blue-800">Longitude</p>
             <p>{weatherData.coord?.lon}°</p>
           </div>
