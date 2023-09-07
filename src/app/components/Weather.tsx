@@ -63,8 +63,8 @@ const Weather = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r pt-16 text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 h-screen flex flex-col items-center justify-center">
-  <div className="bg-white md:m-12 md:mt-4 md:mb-4 md:rounded-lg  dark:text-black p-4 md:p-6 w-full md:w-2/3 lg:w-1/2 xl:w-1/3">
+    <div className="bg-gradient-to-r pt-16 text-black dark:text-black from-blue-500 via-blue-400 to-blue-300 h-screen flex flex-col items-center justify-center ">
+  <div className="bg-white md:m-12 mt-4 mb-4 md:rounded-lg dark:text-black p-4 md:p-6 w-full md:w-2/3 lg:w-3/4 xl:w-2/3">
     <h2 className="text-3xl md:text-6xl text-gray-800 text-center font-semibold my-4">Weather App</h2>
     <div className="flex flex-col md:flex-row justify-between items-center space-x-2 my-4">
       <input
@@ -93,21 +93,21 @@ const Weather = () => {
           <p className="text-3xl md:text-4xl font-bold mx-2">
             {weatherData.main?.temp}°C
           </p>
-          <div className='flex flex-col justify-between md:text-xl text-md my-2 mx-2'>
+          <div className='flex flex-col justify-between md:text-xl text-md my-2 mx-2 space-y-4'>
           <p>Min. temp {weatherData.main?.temp_min}°C</p>
           <p>Max. temp {weatherData.main?.temp_max}°C</p>
           </div>      
         </div>
         <div className="flex flex-col md:text-xl text-md">
-        <div className="flex justify-between">
+        <div className="my-4 flex justify-between">
           <p className="font-bold text-blue-800">Visibility</p>
           <p>{weatherData.visibility / 1000} km</p>
         </div>
-        <div className="flex justify-between">
+        <div className="my-4 flex justify-between">
           <p className="font-bold text-blue-800">Pressure</p>
           <p>{weatherData.main?.pressure} Pa</p>
         </div>
-        <div className="flex justify-between">
+        <div className="my-4 flex justify-between">
           <p className="font-bold text-blue-800">TimeZone (GMT)</p>
           <p>
             {Math.floor(weatherData.timezone / 3600)}
@@ -117,23 +117,23 @@ const Weather = () => {
             {(weatherData.timezone % 3600) / 60}
           </p>
         </div>
-        <div className="flex justify-between">
+        <div className="my-4 flex justify-between">
           <p className="font-bold text-blue-800">Humidity</p>
           <p>{weatherData.main?.humidity} %</p>
         </div>
-        <div className="flex justify-between">
+        <div className="my-4 flex justify-between">
           <p className="font-bold text-blue-800">Wind</p>
           <p>{weatherData.wind?.deg}°</p>
         </div>
-        <div className="flex justify-between">
+        <div className="my-4 flex justify-between">
           <p className="font-bold text-blue-800">Wind Speed</p>
           <p>{weatherData.wind?.speed} km/hr</p>
         </div>
-        <div className="flex justify-between">
+        <div className="my-4 flex justify-between">
           <p className="font-bold text-blue-800">Latitude</p>
           <p>{weatherData.coord?.lat}°</p>
         </div>
-        <div className="flex justify-between">
+        <div className="my-4 flex justify-between">
           <p className="font-bold text-blue-800">Longitude</p>
           <p>{weatherData.coord?.lon}°</p>
         </div>
