@@ -16,7 +16,11 @@ export default function Home() {
   return (
     <div style={{ fontFamily: 'Ambit, sans-serif'}} >
     
-    <div className="font-Ambit bg-gradient-to-r text-white dark:text-white from-blue-500 via-blue-400 to-blue-300 bg-white dark:bg-black">
+    <div className="font-Ambit 
+    bg-gradient-to-r text-white dark:text-white 
+    from-blue-500 via-blue-400 to-blue-300 
+    bg-white dark:bg-black
+    h-screen">
     <GlobalStyle />  
     <Navbar />
     <Weather />
