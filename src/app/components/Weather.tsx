@@ -98,7 +98,7 @@ const Weather = () => {
           <p className="text-xl md:text-2xl font-bold mx-2">
             {weatherData.main?.temp}°C
           </p>
-          <div className="flex flex-col justify-between text-md my-2 md:my-0 mx-2 space-y-2 md:space-y-0 md:space-x-2">
+          <div className="flex flex-col justify-between text-md my-2 md:my-0 mx-2 space-y-2 md:space-y-0">
             <p>Min. temp {weatherData.main?.temp_min}°C</p>
             <p>Max. temp {weatherData.main?.temp_max}°C</p>
           </div>
