@@ -1,9 +1,4 @@
-Certainly! Here's a sample `README.md` file for your Open Weather App project:
-
-```markdown
 # Weather App
-
-![Weather App](app-screenshot.png)
 
 Weather App is a user-friendly web application that provides real-time weather information for any location around the world. With Weather App, you can stay informed about current weather conditions and forecasts, making it easier to plan your day.
 
@@ -38,7 +33,7 @@ Weather App is your reliable companion for weather information. Stay ahead of th
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/weather-app.git
+   git clone https://github.com/psidh/weather-app.git
    ```
 
 2. Navigate to the project directory:
